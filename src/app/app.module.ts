@@ -10,7 +10,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Page1} from "../pages/page1/page1";
-// import {Page2} from "../pages/page2/page2";
+import {Page2} from "../pages/page2/page2";
+import { WelcomePage } from '../pages/welcome/welcome';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import {Page1} from "../pages/page1/page1";
     HomePage,
     TabsPage,
     Page1,
-    // Page2
+    Page2,
+    WelcomePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +38,8 @@ import {Page1} from "../pages/page1/page1";
     HomePage,
     TabsPage,
     Page1,
-    // Page2
+    Page2,
+    WelcomePage
   ],
   providers: [
     StatusBar,
