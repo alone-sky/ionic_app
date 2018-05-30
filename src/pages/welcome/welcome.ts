@@ -23,7 +23,6 @@ export class WelcomePage {
     console.log('ionViewDidLoad WelcomePage');
   }
   goToHome(){
-    alert();
     this.navCtrl.push(TabsPage);
   }
 
