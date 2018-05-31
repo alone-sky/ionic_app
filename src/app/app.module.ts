@@ -13,6 +13,8 @@ import {Page1} from "../pages/page1/page1";
 import {Page2} from "../pages/page2/page2";
 import { WelcomePage } from '../pages/welcome/welcome';
 import { IonicStorageModule } from '@ionic/storage';
+import { HomeProvider } from '../providers/home/homeServer';
+import {JsonpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    JsonpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +47,8 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HomeProvider
   ]
 })
 export class AppModule {}

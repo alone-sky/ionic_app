@@ -14,3 +14,172 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+//第三方字体图标库
+@font-face {
+  font-family: 'Ionicons';
+  src: url('../assets/fonts/icomoon.eot?f10a2f');
+  src: url('../assets/fonts/icomoon.eot?f10a2f#iefix') format('embedded-opentype'),
+  url('../assets/fonts/icomoon.woff?f10a2f') format('woff'),
+  url('../assets/fonts/icomoon.ttf?f10a2f') format('truetype'),
+  url('../assets/fonts/icomoon.svg?f10a2f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?55612316#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "Ionicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+//首页icon
+.ion-md-richScan:before { content: '\e924';color: #96b4f0;font-size: 25px; } /* '扫一扫' have*/
+.ion-md-message:before { content: '\e929';color: #96b4f0;font-size: 25px;} /* '消息' have */
+.ion-md-search:before { content: '\e90f'; } /* '搜索' */
+
+.ion-md-indexLibrary:before { content: '\e92f';color:#f89516; } /* '指标库' have */
+.ion-md-priceLibrary:before { content: '\e903';color:#699fe5; } /* '材价库' have*/
+.ion-md-listingLibrary:before { content: '\e911';color: #54c08c; } /* '清单库' have */
+.ion-md-dataLibrary:before { content: '\e918';color:#f06c7a;  } /* '资料库' have */
+
+.ion-md-backlog:before { content: '\e905';color: #61c587;font-size: 35px; } /* '待办' have */
+.ion-md-haveDone:before { content: '\e92b';color: #f19319;font-siez:35px; } /* '已办' have*/
+.ion-md-joinTask:before { content: '\e904';color: #f66867;font-siez:35px; } /* '参与业务 have' */
+.ion-md-mainLine:before { content: '\e91c';color: #7da5ed;font-size: 35px; } /* '主线' have*/
+
+//底部tab
+.ion-md-homePage:before { content: '\e931';color:#676767; } /* '首页' */
+.ion-md-industryTrends:before { content: '\e901';color:#676767; } /* '项目' */
+.ion-md-events:before { content: '\e915';color:#676767; } /* '咨讯' */
+.ion-md-compass:before { content: '\e91a';color:#676767; } /* '指南针' */
+.ion-md-myCenter:before { content: '\e912';color:#676767; } /* '我的' */
+
+//我的项目（不同文件类型的图标）
+.ion-md-gaiFile:before{content:'\e906';}/* '设计概算 = 概'' */
+.ion-md-heFile:before{content:'\e908';}/* '签约合同价 = 合'' */
+.ion-md-jieFile:before{content:'\e90a';}/* '竣工结算价 = 结' */
+.ion-md-kongFile:before{content:'\e90b';}/* '招标控制价 = 控' */
+.ion-md-touFile:before{content:'\e910';}/* '投标报价 = 投' */
+.ion-md-yuFile:before{content:'\e917';}/* '施工图预算 = 预' */
+.ion-md-guFile:before{content:'\e91d';}/* '投资估算 = 估' */
+
+.ion-md-documentFile:before{content:'\e93d';}/* 造价文件 */
+.ion-md-zbFile:before{content:'\e93e';}/* 指标 */
+.ion-md-costFile:before{content:'\e936';}/* 跟踪审计 */
+.ion-md-shareIn:before{content:'\e943';}/* 分享 */
+.ion-md-shareOut:before{content:'\e944';}/* 分享 */
+
+
+//材价库界面图标
+.ion-md-person:before{content:'\e904';color:#fd55a3;} /*'人才库'*/
+.ion-md-check:before{content:'\e939';color:#58cc27;} /*'审核库'*/
+.ion-md-center:before{content:'\e937';color:#cb7bfc;} /*'核心库'*/
+.ion-md-enquiry:before{content:'\e93c';color:#f9b30c;} /*'询价库'*/
+.ion-md-information:before{content:'\e93b';color:#f6707e;} /*'信息价'*/
+.ion-md-myCollection:before{content:'\e93a';color:#ff8427;} /*'我的收藏'*/
+.ion-md-recycleBin:before{content:'\e938';color:#b1b1b1;} /*'回收站'*/
+.ion-md-estimate:before{content:'\e93f';color:#7ea6ed;} /*'智能估算'*/
+
+
+//tab页我的（小工具）
+.ion-md-location:before{content:'\e940';color:#7ea5ef;font-size: 25px} /*'定位测量'*/
+.ion-md-augmentedReality:before{content:'\e942';color:#65c78b;font-size: 25px}/*'增强现实'*/
+.ion-md-checkLocktion:before { content: '\e930';color: #7da5ed; }
+
+
+//首页icon
+.ion-ios-richScan:before { content: '\e924';color: #96b4f0;font-size: 25px; } /* '扫一扫' */
+.ion-ios-message:before { content: '\e929';color: #96b4f0;font-size: 25px;  } /* '消息' */
+.ion-ios-search:before { content: '\e90f'; } /* '搜索' */
+
+.ion-ios-indexLibrary:before { content: '\e92f';color:#f89516; } /* '指标库' */
+.ion-ios-priceLibrary:before { content: '\e903';color:#699fe5; } /* '材价库' */
+.ion-ios-listingLibrary:before { content: '\e911';color: #54c08c; } /* '清单库' */
+.ion-ios-dataLibrary:before { content: '\e918';color:#f06c7a; } /* '资料库' */
+
+.ion-ios-backlog:before { content: '\e905';color: #61c587; } /* '待办' */
+.ion-ios-haveDone:before { content: '\e92b';color: #f19319; } /* '已办' */
+.ion-ios-joinTask:before { content: '\e904';color: #f66867; } /* '参与业务' */
+.ion-ios-mainLine:before { content: '\e91c';color: #7da5ed; } /* '主线' */
+
+
+//底部tab
+.ion-ios-homePage:before { content: '\e931';color:#676767;font-size: 27px } /* '首页' */
+.ion-ios-industryTrends:before { content: '\e901';color:#676767;font-size: 25px } /* '行业动态' */
+.ion-ios-events:before { content: '\e915';color:#676767;font-size: 25px } /* '协会活动' */
+.ion-ios-compass:before { content: '\e91a';color:orange;font-size: 25px } /* '指南针' */
+.ion-ios-myCenter:before { content: '\e912';color:#676767;font-size: 25px } /* '我的' */
+
+.ion-ios-homePage-outline:before { content: '\e931';color:#676767;font-size: 27px } /* '首页' */
+.ion-ios-industryTrends-outline:before { content: '\e901';color:#676767;font-size: 25px } /* '项目' */
+.ion-ios-events-outline:before { content: '\e915';color:#676767;font-size: 25px } /* '咨讯' */
+.ion-ios-compass-outline:before { content: '\e91a';color:#676767;font-size: 25px } /* '指南针' */
+.ion-ios-myCenter-outline:before { content: '\e912';color:#676767;font-size: 25px } /* '我的' */
+
+//我的项目（不同文件类型的图标）
+.ion-ios-gaiFile:before{content:'\e906';color: cornflowerblue}/* '设计概算 = 概'' */
+.ion-ios-heFile:before{content:'\e908';}/* '签约合同价 = 合'' */
+.ion-ios-jieFile:before{content:'\e90a';}/* '竣工结算价 = 结' */
+.ion-ios-kongFile:before{content:'\e90b';}/* '招标控制价 = 控' */
+.ion-ios-touFile:before{content:'\e910';}/* '投标报价 = 投' */
+.ion-ios-yuFile:before{content:'\e917';}/* '施工图预算 = 预' */
+.ion-ios-guFile:before{content:'\e91d';}/* '投资估算 = 估' */
+
+.ion-ios-documentFile:before{content:'\e93d';}/* 造价文件 */
+.ion-ios-zbFile:before{content:'\e93e';}/* 指标 */
+.ion-ios-costFile:before{content:'\e936';}/* 跟踪审计 */
+.ion-ios-shareIn:before{content:'\e943';}/* 分享 */
+.ion-ios-shareOut:before{content:'\e944';}/* 分享 */
+
+//tab页我的（小工具）
+.ion-ios-location:before{content:'\e940';color:#7ea5ef;font-size: 25px} /*'定位测量'*/
+.ion-ios-augmentedReality:before{content:'\e942';color:#65c78b;font-size: 25px}/*'增强现实'*/
+.ion-ios-checkLocktion:before { content: '\e930';color: #7da5ed; }
+
+//材价库界面图标
+.ion-ios-person:before{content:'\e904';color:#fd55a3;} /*'人才库'*/
+.ion-ios-check:before{content:'\e939';color:#58cc27;} /*'审核库'*/
+.ion-ios-center:before{content:'\e937';color:#cb7bfc;} /*'核心库'*/
+.ion-ios-enquiry:before{content:'\e93c';color:#f9b30c;} /*'询价库'*/
+.ion-ios-information:before{content:'\e93b';color:#f6707e;} /*'信息价'*/
+.ion-ios-myCollection:before{content:'\e93a';color:#ff8427;} /*'我的收藏'*/
+.ion-ios-recycleBin:before{content:'\e938';color:#b1b1b1;} /*'回收站'*/
+.ion-ios-estimate:before{content:'\e93f';color:#7ea6ed;} /*'智能估算'*/
