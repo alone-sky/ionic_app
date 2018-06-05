@@ -44,5 +44,6 @@ export class Page2 {
     this.navCtrl.push(Page2, {
       item: item,
     });
+    console.log(this.selectedItem,'88')
   }
 }

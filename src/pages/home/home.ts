@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomeProvider } from '../../providers/home/homeServer';
-import { Hero } from '../../providers/home/Hero';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  heroes: Hero[];
+  heroes: any;
 
   constructor(public navCtrl: NavController,public HomeProviders:HomeProvider) {
 
@@ -20,7 +19,11 @@ export class HomePage {
 
   getHeroes(): void {
     this.HomeProviders.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => {
+          for(var i=0;i<heroes.length;i++){
+            this.heroes=heroes[0].arr;//热点新闻
+          }
+      });
   }
 
   getDetailNews():void{
