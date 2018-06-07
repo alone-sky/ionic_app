@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,6 +16,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { IonicStorageModule } from '@ionic/storage';
 import { HomeProvider } from '../providers/home/homeServer';
 import {JsonpModule} from "@angular/http";
+import { SearchProvider } from '../providers/search/search';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {JsonpModule} from "@angular/http";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    JsonpModule
+    JsonpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +51,8 @@ import {JsonpModule} from "@angular/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HomeProvider
+    HomeProvider,
+    SearchProvider
   ]
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
-import { HomeProvider } from '../../providers/home/homeServer';
+import { SearchProvider } from '../../providers/search/search';
 /*
  Generated class for the Page1 page.
 
@@ -13,14 +13,13 @@ import { HomeProvider } from '../../providers/home/homeServer';
 })
 export class Page1 {
   page:any;
-  news:any;
-  constructor(public navCtrl: NavController,public navParams:NavParams,public homeProvider:HomeProvider) {
+  newsSpors:any;//体育
+  constructor(public navCtrl: NavController,public navParams:NavParams,public searchProvider:SearchProvider) {
     this.page = navParams.get('page');
   }
   ngOnInit() {
     this.getPage();
-    this.homeProvider.getHero(this.page.id)
-      .subscribe(news => {this.news = news.arr;console.log(news,'88')});
+    this.getDate();
 
   }
 
@@ -28,9 +27,66 @@ export class Page1 {
     if(this.page){
 
     }else{
-      this.page={'title':'热点新闻',id:1}
+      this.page= { title: '体育新闻', component: Page1, type:'news_sports' };
     }
 
+  }
+  //获取数据
+  getDate():void{
+    if(this.page.type=='news_sports'){
+      this.searchProvider.newsSports().subscribe(
+        data => {
+          this.newsSpors = data.data;
+          console.log(this.newsSpors)
+        },
+        error => {
+        }
+      );
+    }
+
+    if(this.page.type=='news_tech'){
+      this.searchProvider.newsTech().subscribe(
+        data => {
+          this.newsSpors = data.data;
+          console.log(this.newsSpors)
+        },
+        error => {
+        }
+      );
+    }
+
+    if(this.page.type=='news_military'){
+      this.searchProvider.newsMilitary().subscribe(
+        data => {
+          this.newsSpors = data.data;
+          console.log(this.newsSpors)
+        },
+        error => {
+        }
+      );
+    }
+
+    if(this.page.type=='news_world'){
+      this.searchProvider.newsWorld().subscribe(
+        data => {
+          this.newsSpors = data.data;
+          console.log(this.newsSpors)
+        },
+        error => {
+        }
+      );
+    }
+
+    if(this.page.type=='news_fashion'){
+      this.searchProvider.newsFashion().subscribe(
+        data => {
+          this.newsSpors = data.data;
+          console.log(this.newsSpors)
+        },
+        error => {
+        }
+      );
+    }
   }
 
   ionViewDidLoad() {

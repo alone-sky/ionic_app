@@ -12,13 +12,16 @@ export class AboutPage {
 
   rootPage: any = Page1;
 
-  pages: Array<{title: string, component: any,id:number}>;
+  pages: Array<{title: string, component: any,type:string}>;
 
   constructor(public navCtrl: NavController) {
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: '热点新闻', component: Page1, id:1 },
-      { title: '娱乐新闻', component: Page1, id:2 }
+      { title: '体育新闻', component: Page1, type:'news_sports' },
+      { title: '科技新闻', component: Page1, type:'news_tech' },
+      { title: '军事新闻', component: Page1, type:'news_military' },
+      { title: '国际新闻', component: Page1, type:'news_world' },
+      { title: '时尚新闻', component: Page1, type:'news_fashion' }
     ];
   }
 

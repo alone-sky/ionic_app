@@ -9,8 +9,49 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let new of news">
-      <span class="badge">{{new.id}}</span> {{new.name}}
-    </button>
+    <div *ngFor="let new of newsSpors">
+      <!--没有图片的新闻-->
+      <div class="onImageContainer" *ngIf="new.large_image_url">
+        <div class="title">
+          <div class="content">{{new.title}}</div>
+          <div class="comment">
+            <span>{{new.media_name}}</span>
+            <span>评论：{{new.comment_count}}</span>
+          </div>
+        </div>
+        <div class="oneImage">
+          <a href="http://toutiao.com/group/6563627254960619528/">
+            <img src="{{new.large_image_url}}">
+          </a>
+        </div>
+      </div>
+      <!--仅有一张图片的模板-->
+      <div class="onImageContainer" *ngIf="new.image_url">
+        <div class="title">
+          <div class="content">{{new.title}}</div>
+          <div class="comment">
+            <span>{{new.media_name}}</span>
+            <span>评论：{{new.comment_count}}</span>
+          </div>
+        </div>
+        <div class="oneImage">
+          <img src="{{new.image_url}}">
+        </div>
+      </div>
+      <!--多张图片的模板-->
+      <div *ngIf="new.image_list.length>0" class="moreImageContainer">
+        <div class="title">{{new.title}}</div>
+        <div class="moreImage" >
+          <div class="oneImage" *ngFor="let img of new.image_list">
+            <img src="{{img.url}}">
+          </div>
+        </div>
+        <div class="comment">
+          <span>{{new.media_name}}</span>
+          <span>评论：{{new.comment_count}}</span>
+        </div>
+      </div>
+
+    </div>
   </ion-list>
 </ion-content>
